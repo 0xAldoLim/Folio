@@ -1,0 +1,2 @@
+import { defineConfig } from '@playwright/test';
+export default defineConfig({ testDir:'tests/integration', workers:1, timeout:45000, expect:{timeout:7000,toHaveScreenshot:{maxDiffPixelRatio:.005}}, reporter:[['list'],['html',{open:'never'}],['json',{outputFile:'test-results/results.json'}]], use:{viewport:{width:1280,height:900},locale:'en-US',timezoneId:'Asia/Kuala_Lumpur'}, webServer:{command:'node scripts/test-server.mjs',url:'http://127.0.0.1:4179/tests/fixtures/article.html',reuseExistingServer:!process.env.CI}, snapshotPathTemplate:'{testDir}/snapshots/{arg}{ext}' });

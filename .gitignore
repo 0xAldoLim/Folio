@@ -1,0 +1,13 @@
+node_modules/
+work/
+test-results/
+playwright-report/
+validation/
+.pnpm-store/
+coverage/
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db

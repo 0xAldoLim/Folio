@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3, "name": "Folio — Comfortable reading", "version": "1.0.0", "minimum_chrome_version": "120",
+  "description": "Turn the web into a calmer place to read. Six paper-inspired palettes, private Reader Mode, and thoughtful typography.",
+  "permissions": ["activeTab", "scripting", "storage", "alarms"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "service-worker.js", "type": "module" },
+  "action": { "default_title": "Open Folio", "default_popup": "popup.html", "default_icon": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" } },
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "commands": {
+    "toggle-folio": { "suggested_key": { "default": "Alt+Shift+F" }, "description": "Toggle Folio on this tab" },
+    "cycle-preset": { "suggested_key": { "default": "Alt+Shift+L" }, "description": "Cycle reading palette" },
+    "toggle-reader": { "suggested_key": { "default": "Alt+Shift+R" }, "description": "Enter or exit Reader Mode" }
+  },
+  "content_security_policy": { "extension_pages": "script-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'" }
+}

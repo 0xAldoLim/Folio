@@ -1,0 +1,57 @@
+{
+  "date": "2026-10-19T02:30:57.446Z",
+  "browser": "155.0.8059.80",
+  "platform": "win32",
+  "architecture": "x64",
+  "method": "Real MV3 extension in headless Chrome; test-only loopback host grant. JS heap after forced GC; idle renderer TaskDuration over 1s. CSS apply timings exclude next paint. Scroll uses 60 rAF frames; mutation includes Playwright round trips. No process RSS or power measurement.",
+  "rows": [
+    {
+      "containers": 100,
+      "settledActivationMs": 73.97820000000002,
+      "heapSecond40SwitchesDeltaBytes": 24,
+      "initializationMs": 5.5999999940395355,
+      "themeSwitchMedianMs": 0.19999998807907104,
+      "themeSwitchP95Ms": 0.30000001192092896,
+      "addedJSHeapBytes": 1371256,
+      "heapAfter40SwitchesDeltaBytes": 31320,
+      "idleTaskDurationMs": 3.8810000000000096,
+      "idleClassificationBatches": 0,
+      "mutation1000ParagraphsMs": 165.3198000000002,
+      "scrollFrameP95Ms": 7,
+      "styles": 1,
+      "classified": 1276
+    },
+    {
+      "containers": 1500,
+      "settledActivationMs": 146.41899999999987,
+      "heapSecond40SwitchesDeltaBytes": 72,
+      "initializationMs": 9.600000023841858,
+      "themeSwitchMedianMs": 0.19999998807907104,
+      "themeSwitchP95Ms": 0.30000001192092896,
+      "addedJSHeapBytes": 1722716,
+      "heapAfter40SwitchesDeltaBytes": 31176,
+      "idleTaskDurationMs": 11.142000000000014,
+      "idleClassificationBatches": 0,
+      "mutation1000ParagraphsMs": 168.14849999999933,
+      "scrollFrameP95Ms": 7.099999999999454,
+      "styles": 1,
+      "classified": 4076
+    },
+    {
+      "containers": 6000,
+      "settledActivationMs": 842.8657999999996,
+      "heapSecond40SwitchesDeltaBytes": 96,
+      "initializationMs": 11.900000005960464,
+      "themeSwitchMedianMs": 0.10000002384185791,
+      "themeSwitchP95Ms": 0.30000001192092896,
+      "addedJSHeapBytes": 2866376,
+      "heapAfter40SwitchesDeltaBytes": 31592,
+      "idleTaskDurationMs": 0.5800000000000249,
+      "idleClassificationBatches": 0,
+      "mutation1000ParagraphsMs": 159.76530000000275,
+      "scrollFrameP95Ms": 7,
+      "styles": 1,
+      "classified": 13076
+    }
+  ]
+}

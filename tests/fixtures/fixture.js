@@ -1,0 +1,9 @@
+const kind=new URL(location.href).searchParams.get('kind');if(kind==='dark'||kind==='github')document.body.classList.add('native-dark');
+const text='Reading is a small act of choosing what matters. Each paragraph offers a new way to see the familiar world: the changing light at the kitchen window, a sentence underlined years ago, the reassuring weight of a well-made book. When we slow down enough to notice these things, the page becomes a place rather than a task. A comfortable line of text gives us permission to stay, to think, and to follow an idea all the way to its end.';
+for(let i=0;i<14;i++){const p=document.createElement('p');p.textContent=text;document.getElementById('paragraphs').append(p);}
+document.getElementById('test-form').addEventListener('submit',e=>{e.preventDefault();document.getElementById('form-result').textContent='Saved: '+document.getElementById('name').value;});
+document.getElementById('add').onclick=()=>{const p=document.createElement('p');p.id='dynamic-'+Date.now();p.textContent='Dynamically added content. '+text;document.getElementById('paragraphs').append(p);};
+document.getElementById('navigate').onclick=()=>{history.pushState({},'',location.pathname+'?kind=spa');const article=document.createElement('article');article.id='spa-content';const p=document.createElement('p');p.textContent='A fresh SPA article. '+text;article.append(p);document.querySelector('main').prepend(article);};
+document.getElementById('show-dialog').onclick=()=>document.querySelector('dialog').showModal();document.getElementById('close-dialog').onclick=()=>document.querySelector('dialog').close();
+const c=document.querySelector('canvas').getContext('2d');c.fillStyle='#db7053';c.fillRect(10,10,30,40);c.fillStyle='#377a66';c.fillRect(50,20,30,30);
+document.getElementById('video-fullscreen').onclick=()=>document.querySelector('video').requestFullscreen();

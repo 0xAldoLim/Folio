@@ -1,0 +1,10 @@
+import { beforeEach, afterEach, it, expect, vi } from 'vitest';
+import { loadSettings, updateSettings } from '../../src/storage/repository';
+import { defaults } from '../../src/storage/schema';
+let storage:Record<string,unknown>;
+beforeEach(()=>{storage={};vi.stubGlobal('chrome',{storage:{local:{get:async(key:string)=>({[key]:storage[key]}),set:async(value:Record<string,unknown>)=>Object.assign(storage,value)}}});});
+afterEach(()=>vi.unstubAllGlobals());
+it('returns safe defaults for a first install',async()=>expect(await loadSettings()).toEqual(defaults()));
+it('recovers corrupted settings and records a user-facing notice',async()=>{storage.settings={version:99};expect(await loadSettings()).toEqual(defaults());expect(storage.recoveryNotice).toMatch(/reset/);});
+it('serializes concurrent partial changes without losing preferences',async()=>{await Promise.all([updateSettings(s=>({...s,preset:'dark'})),updateSettings(s=>({...s,enabled:false}))]);expect(await loadSettings()).toMatchObject({preset:'dark',enabled:false});});
+it('continues after a rejected update',async()=>{await expect(updateSettings(s=>({...s,preset:'missing'}))).rejects.toThrow();await updateSettings(s=>({...s,preset:'sepia'}));expect((await loadSettings()).preset).toBe('sepia');});
